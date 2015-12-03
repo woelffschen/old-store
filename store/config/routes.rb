@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   resources :shopping_carts
   resources :shopping_items
   resources :shopping_lists
-  resources :users
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126071856) do
+ActiveRecord::Schema.define(version: 20151203142557) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "street"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20151126071856) do
     t.text     "description"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.integer  "category_id"
   end
 
   create_table "bank_accounts", force: :cascade do |t|
@@ -50,8 +51,12 @@ ActiveRecord::Schema.define(version: 20151126071856) do
   create_table "orders", force: :cascade do |t|
     t.boolean  "billPayed"
     t.boolean  "shipped"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "shoppingList_id"
+    t.integer  "bankAccount_id"
+    t.integer  "address_id"
+    t.integer  "shippingMethod_id"
   end
 
   create_table "shipping_methods", force: :cascade do |t|
@@ -62,14 +67,17 @@ ActiveRecord::Schema.define(version: 20151126071856) do
   end
 
   create_table "shopping_carts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "shoppingList_id"
   end
 
   create_table "shopping_items", force: :cascade do |t|
     t.integer  "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "article_id"
+    t.integer  "shoppingList_id"
   end
 
   create_table "shopping_lists", force: :cascade do |t|
