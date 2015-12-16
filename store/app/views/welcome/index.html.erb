@@ -1,2 +1,6 @@
-<h1>Willkommen</h1>
-<p>In unserem online Shop</p>
+<h1>Welcome</h1>
+<p>Thanks for visiting our shop,
+<% if user_signed_in? %>
+    <%= current_user.first_name %>
+<% end %>
+</p>
