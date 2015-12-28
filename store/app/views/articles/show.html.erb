@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @article.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @article.image_url %>
+</p>
+
+<p>
+  <strong>Colour:</strong>
+  <%= @article.colour %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @article.size %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @article.price %>
+</p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

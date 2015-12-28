@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :articles
+  resources :articles
   devise_for :users
   root 'welcome#index'
   resources :articles
@@ -14,6 +16,8 @@ Rails.application.routes.draw do
 
   # Hinweis von: rails g devise:controllers users
   #Rails.application.routes.draw do
+  resources :articles
+  resources :articles
     #devise_for :users, controllers: {
         #sessions: 'users/sessions'
     #}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216112159) do
+ActiveRecord::Schema.define(version: 20151228165536) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "street"
@@ -24,13 +24,13 @@ ActiveRecord::Schema.define(version: 20151216112159) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
-    t.decimal  "price"
-    t.integer  "colour",      default: 0, null: false
-    t.integer  "size",        default: 0, null: false
     t.text     "description"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.integer  "category_id"
+    t.string   "image_url"
+    t.integer  "colour"
+    t.integer  "size"
+    t.decimal  "price"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "bank_accounts", force: :cascade do |t|
@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(version: 20151216112159) do
     t.integer  "quantity"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "article_id"
     t.integer  "shoppingList_id"
   end
 
