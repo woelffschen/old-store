@@ -23,6 +23,13 @@ Rails.application.routes.draw do
     #}
   #end
 
+  # SIMPLE NAVIGATION
+  root :to => 'articles#index'
+
+  get 'gist' => 'gist#load', :as => :gist
+  get 'menu' => 'menu#index', :as => :menu
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
