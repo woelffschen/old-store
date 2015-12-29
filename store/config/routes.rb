@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :articles
   devise_for :users
-  root 'welcome#index'
+  #root 'welcome#index'
   resources :articles
   resources :addresses
   resources :bank_accounts
@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   #end
 
   # SIMPLE NAVIGATION
-  root :to => 'articles#index'
+  root :to => 'welcome#index'
+  
 
   get 'gist' => 'gist#load', :as => :gist
   get 'menu' => 'menu#index', :as => :menu
